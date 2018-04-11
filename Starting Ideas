@@ -1,0 +1,34 @@
+Some ideas for the makeup of our landscape (possible floor tiles):
+
+0) ash (a) - 
+1) dirt (d) - complete inability to catch fire or spread fire.
+2) rock (r) - complete inability to catch fire. Breaks wind, slows ignition of flamable tiles adjacent to rock.
+
+3) grass (g) - flammable. very short time before ignition. very short burn time
+4) shrub (s) - flammable. short/medium time before ignition. medium burn time.
+5) tree (t)  - flammable. medium/long time before ignition. long burn time. 
+6) water (w) - complete inability to catch fire. (exception in the nether)  Strong slowing of ignition of near tiles.
+
+once a flammable tile completes it's combustion time, the tile is changed to ash, thus unable to reignite or act as medium for fire.
+
+
+The nature of FIRE:
+ignition point (i) - where our fire starts in our simulation. (keeps seperate marker throughout simulation despite burning so we can
+                     always see/ visually refer to the origin of the fire.
+flames (F) - the actively burning part of our fire. Once a flammable object is ignited its' symbol changes to F* and proceeds to burn
+             for the duration set by the material.             
+            * We might want to not have all burning objects represented by F so we have a visual que for what is being burned.
+                     
+                     
+                     
+Wind Speed/Direction: a display at the top of our generated map. 
+                      Fire naturally spreads in all directions at rate x. (We can have a fire in no wind.)
+                      Fire spreads downwind of active flames at increased rate. For example 2x
+                      Fire spreads upwind of active flames at decreased rate For example .7x
+                          * I suggest a disproportinate modification of flame ignition between upwind & downwind. (If downwind doubles, 
+                            I dont think upwind should halve.)
+                            
+                            
+                            
+      These are just some first draft ideas. If we want more object tile types than these I have some 
+      ideas but I think we should get these core ones working first.  
