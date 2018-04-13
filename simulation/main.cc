@@ -99,143 +99,6 @@ class Fire {
 };
 
 
-/*
-class Herbivore {
-	public:
-		Herbivore () {}
-		Herbivore (int new_x, int new_y) : x(new_x), y(new_y) {}
-		int x = 0, y = 0; //Location
-		int hunger = 0; //Increases from 0 to 100, +1 per frame. At 100 it dies
-		int thirst = 0; //Ditto
-		int breeding = 0; //Ditto
-		int sleep = 0; //Ditto
-		int fear = 0; //Fear should be equal to 100 if we have a predator one square away, falling off to 0 if there are no predators within 5 squares.
-		bool sleeping = false;
-		bool dead = false;
-
-		void think() { //YOU: Write this AI Think function
-			//Handle dead dinosaurs - they stick around for 10 rounds
-			if (dead) { 
-				if (hunger > 0) hunger = 0; //Hunger becomes our decay counter
-				hunger -= 10; //It will get removed by the game code if hunger drops below -100
-				return;
-			}
-
-			//Handle sleeping dinosaurs - they will do nothing until they wake up
-			if (sleeping) {
-				sleep -= 10;
-				if (sleep < 0) {
-					sleep = 0;
-					sleeping = false;
-					return;
-				}
-			}
-			//Phase 1 - update input states
-			hunger++;
-			thirst++;
-			breeding++;
-			sleep++;
-			fear = 0; //YOU: Calculate the fear level by searching for nearby predators
-
-			//PHASE 2 - Kill it off if hunger, thirst, breeding, or sleep hit 100
-			if (hunger >= 100 || thirst >= 100 || breeding >= 100 || sleep >= 100) {
-				dead = true;
-				return;
-			}
-
-			//PHASE 3 - Use a simple graph to calculate which actions we should take based on states
-			//Hunger should encourage trying to find food to eat
-			//Sleep should encourage us to sleep 
-			//Fear should inhibit hunger a bit and sleeping a lot
-			int should_eat = hunger - fear / 2;
-			int should_sleep = sleep - fear;
-			//Etc. Do this for all the possible actions
-
-			//PHASE 4 - Based on which outcome has the highest activation, perform that action here
-			//Possible actions are:
-			// 1) go to sleep
-			// 2) eat (if we are next to a herb, otherwise move to herb)
-			//  When we eat an herb, hunger will be reduced by the food_value of the herb
-			// 3) breed (if we are next to another herbivore, otherwise move to an herbivore)
-			//   Breed should place a new herbivore on the map and set breeding to 0.
-			// 4) drink (if we are next to water, or move toward water)
-			//  Drinking water should reduce thirst by 50 (minimum 0)
-			// 5) run away (if we are near a predaor, move away from it)
-			// 6) If nothing else, move randomly (implemented for you here)
-			int new_x = x + rand() % 3 - 1;
-			int new_y = y + rand() % 3 - 1;
-			if (world[index(new_x,new_y)] == OPEN) {
-				world[index(new_x,new_y)] = HERBIVORE;
-				world[index(x,y)] = OPEN;
-				x = new_x;
-				y = new_y;
-			}
-		}
-};*/
-
-/*
-class Carnivore {
-	public:
-		Carnivore () {}
-		Carnivore (int new_x, int new_y) : x(new_x), y(new_y) {}
-		int x = 0, y = 0; //Location
-		int hunger = 0; //Increases from 0 to 100, +1 per frame. At 100 it dies
-		int thirst = 0; //Ditto
-		int breeding = 0; //Ditto
-		int sleep = 0; //Ditto
-		bool sleeping = false;
-		bool dead = false;
-
-		void think() { //YOU: Write this AI Think function
-			if (dead) return;
-
-			//Handle sleeping dinosaurs - they will do nothing until they wake up
-			if (sleeping) {
-				sleep -= 10;
-				if (sleep < 0) {
-					sleep = 0;
-					sleeping = false;
-					return;
-				}
-			}
-
-			//Phase 1 - update input states
-			hunger++;
-			thirst++;
-			breeding++;
-			sleep++;
-
-			//PHASE 2 - Kill it off if hunger, thirst, breeding, or sleep hit 100
-			if (hunger >= 100 || thirst >= 100 || breeding >= 100 || sleep >= 100) {
-				dead = true;
-				return;
-			}
-
-			//PHASE 3 - Use a simple graph to calculate which actions we should take based on states
-			//Hunger should encourage trying to find food to eat
-			//Sleep should encourage us to sleep 
-			//Etc. Do this for all the possible actions
-			//You should increase the weight for nearby targets, like a nearby herbivore would boost eat
-
-			//PHASE 4 - Based on which outcome has the highest activation, perform that action here
-			//Possible actions are:
-			// 1) go to sleep
-			// 2) eat (if we are next to a herbivore, otherwise move to herbivore)
-			// 3) breed (if we are next to another carnivore, otherwise move to an carnivore)
-			//   Breed should place a new carnivore on the map
-			// 4) drink (if we are next to water, or move toward water)
-			// 5) If nothing else, move randomly (implemented for you here)
-			int new_x = x + rand() % 3 - 1;
-			int new_y = y + rand() % 3 - 1;
-			if (world[index(new_x,new_y)] == GRASS) {
-				world[index(new_x,new_y)] = FIRE;
-				world[index(x,y)] = GRASS;
-				x = new_x;
-				y = new_y;
-			}
-		}
-};*/
-
 //Builds an empty world with walls on the edges and open squares in the middle
 //Randomly populate it with herbs, herbivores, and carnivores
 const int TREE_PERCENTAGE = 10;
@@ -412,12 +275,11 @@ int main()
 		}
 			//Clean up at most one corpse per frame, since the iterator goes invalid after erase
 			//TODO: Fix this so it cleans up all corpses
-			/*auto iter = Fire.begin();
+			auto iter = Fire.begin();
 			while (iter != ff.end()) {
 				//if (iter->dead && iter->hunger <= -100) {
 					world[index(iter->x,iter->y)] = OPEN;
 					ff.erase(iter);
-					break;
 				}
 				iter++;
 			}*/
