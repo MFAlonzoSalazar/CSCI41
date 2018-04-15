@@ -11,30 +11,30 @@ void wait_ticks(int ticks) {
 
 void words(int frame) {
 	int x = 60-frame, y = 0, line = 0;
-			mvprintw(y+line++,x,"     _____                      ___           ___     ");
-			mvprintw(y+line++,x,"    /  /::\\       ___          /__/\\         /  /\\    ");
-			mvprintw(y+line++,x,"   /  /:/\\:\\     /  /\\         \\  \\:\\       /  /::\\   ");
-			mvprintw(y+line++,x,"  /  /:/  \\:\\   /  /:/          \\  \\:\\     /  /:/\\:\\  ");
-			mvprintw(y+line++,x," /__/:/ \\__\\:| /__/::\\      _____\\__\\:\\   /  /:/  \\:\\ ");
-			mvprintw(y+line++,x," \\  \\:\\ /  /:/ \\__\\/\\:\\__  /__/::::::::\\ /__/:/ \\__\\:\\");
-			mvprintw(y+line++,x,"  \\  \\:\\  /:/     \\  \\:\\/\\ \\  \\:\\~~\\~~\\/ \\  \\:\\ /  /:/");
-			mvprintw(y+line++,x,"   \\  \\:\\/:/       \\__\\::/  \\  \\:\\  ~~~   \\  \\:\\  /:/ ");
-			mvprintw(y+line++,x,"    \\  \\::/        /__/:/    \\  \\:\\        \\  \\:\\/:/  ");
-			mvprintw(y+line++,x,"     \\__\\/         \\__\\/      \\  \\:\\        \\  \\::/   ");
-			mvprintw(y+line++,x,"                               \\__\\/         \\__\\/    ");
-			mvprintw(y+line++,x,"      ___         ___           ___                       ___     ");
-			mvprintw(y+line++,x,"     /  /\\       /  /\\         /__/\\        ___          /  /\\    ");
-			mvprintw(y+line++,x,"    /  /::\\     /  /::\\        \\  \\:\\      /  /\\        /  /:/    ");
-			mvprintw(y+line++,x,"   /  /:/\\:\\   /  /:/\\:\\        \\  \\:\\    /  /:/       /  /:/     ");
-			mvprintw(y+line++,x,"  /  /:/~/:/  /  /:/~/::\\   _____\\__\\:\\  /__/::\\      /  /:/  ___ ");
-			mvprintw(y+line++,x," /__/:/ /:/  /__/:/ /:/\\:\\ /__/::::::::\\ \\__\\/\\:\\__  /__/:/  /  /\\");
-			mvprintw(y+line++,x," \\  \\:\\/:/   \\  \\:\\/:/__\\/ \\  \\:\\~~\\~~\\/    \\  \\:\\/\\ \\  \\:\\ /  /:/");
-			mvprintw(y+line++,x,"  \\  \\::/     \\  \\::/       \\  \\:\\  ~~~      \\__\\::/  \\  \\:\\  /:/ ");
-			mvprintw(y+line++,x,"   \\  \\:\\      \\  \\:\\        \\  \\:\\          /__/:/    \\  \\:\\/:/  ");
-			mvprintw(y+line++,x,"    \\  \\:\\      \\  \\:\\        \\  \\:\\         \\__\\/      \\  \\::/   ");
-			mvprintw(y+line++,x,"     \\__\\/       \\__\\/         \\__\\/                     \\__\\/    ");
-			mvprintw(y+line++,x,"");
-			mvprintw(y+line++,x,"(c) 2015 William Kerney");
+	mvprintw(y+line++,x,"   ___          ___    _____________    ___            ________    "); 
+	mvprintw(y+line++,x,"  |   |        |   |  |             |  |   |          |        \\  ");
+	mvprintw(y+line++,x,"  |   |        |   |  |____     ____|  |   |          |         \\ "); 
+	mvprintw(y+line++,x,"  |   |        |   |       |   |       |   |          |    __    \\");
+	mvprintw(y+line++,x,"  |   |        |   |       |   |       |   |          |   |  |    |");
+	mvprintw(y+line++,x,"  |   |   __   |   |       |   |       |   |          |   |  |    |");  
+	mvprintw(y+line++,x,"  |   |  |  |  |   |       |   |       |	|          |   |  |    |"); 
+	mvprintw(y+line++,x,"  |   |  |  |  |   |       |   |       |   |          |   |__|    |"); 
+	mvprintw(y+line++,x,"  |   |__|  |__|   |   ____|   |____   |   |_______   |          / ");
+	mvprintw(y+line++,x,"  |                |  |             |  |           |  |         /  ");  
+	mvprintw(y+line++,x,"  |________________|  |_____________|  |___________|  |________/   ");
+	mvprintw(y+line++,x,"         ");
+	mvprintw(y+line++,x,"   ___________    _____________    ________         ____________  ");
+	mvprintw(y+line++,x,"  |           |  |             |  |    __   \\      |            | ");
+	mvprintw(y+line++,x,"  |    _______|  |____     ____|  |   |  |   |     |     _______| ");
+	mvprintw(y+line++,x,"  |   |               |   |       |   |  |   |     |    |         ");
+	mvprintw(y+line++,x,"  |   |___            |   |       |   |__|  /      |    |___      ");
+	mvprintw(y+line++,x,"  |       |           |   |       |    _   /       |        |     ");
+	mvprintw(y+line++,x,"  |    ___|           |   |       |   |   \\ \\      |     ___|     ");
+	mvprintw(y+line++,x,"  |   |               |   |       |   |    \\ \\     |    |         ");
+	mvprintw(y+line++,x,"  |   |           ____|   |____   |   |     \\ \\    |    |_______  ");
+	mvprintw(y+line++,x,"  |   |          |             |  |   |      \\ \\   |            | ");
+	mvprintw(y+line++,x,"  |___|          |_____________|  |___|       \\_\\  |____________| ");
+	mvprintw(y+line++,x,"");
 }
 
 void splash() {
@@ -43,7 +43,7 @@ void splash() {
 		timeout(10);
 		int ch = getch(); //Allow them to hit a key to skip the splash screen
 		if (ch != ERR) return;
-		
+
 		//Redraw splash screen
 		clear();
 		words(i);
