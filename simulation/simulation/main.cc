@@ -9,6 +9,7 @@
 #include <queue>
 #include <set>
 #include "splash.h"
+#include "inheritance.h"
 using namespace std;
 
 class Fire; 
