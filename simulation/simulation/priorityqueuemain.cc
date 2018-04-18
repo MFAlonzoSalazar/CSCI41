@@ -287,6 +287,10 @@ int main()
 			/*while (! ff.empty()) {
 				ff.think();
 			}*/
+		
+			fire fobj = ff.top();
+			ff.top();
+			fobj.think();
 		}
 			//Clean up at most one corpse per frame, since the iterator goes invalid after erase
 			//TODO: Fix this so it cleans up all corpses
