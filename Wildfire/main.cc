@@ -243,14 +243,14 @@ int main()
 	//make_heap(ff.begin(), ff.end());
 	//Initialize random number generator
 	srand(time(NULL));
+	while (true) {
 cout << "Would you like to read trivia or just play the simulation: enter 1 for trivia and 2 for simulation." << endl;
 	int number = 0;
 	cin >> number;
 	//if (!isdigit(number)) die();
 	if (!cin) die();
-	while (true) {
-		if (number == 0) break;
-	if (number == 1) {/*
+	if (number == 0) break;
+	if (number == 1) {
 		while (true) {
 			cout << endl;
 			cout << "Which of these would you like to learn more about? 1) Trees 2)Bushes 3) Grass 4) Plants (Press zero to exit)" << endl;
@@ -510,9 +510,9 @@ cout << "Would you like to read trivia or just play the simulation: enter 1 for 
 					}
 				}
 			}
-		}*/
-		die();
 		}
+	
+	}
 
 
 	else if (number == 2) {
